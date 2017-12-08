@@ -1,0 +1,15 @@
+#!/bin/bash
+
+system_type=$(uname -s)
+if [ "$system_type" = "Darwin" ]; then
+    bin/macsetup.sh
+else
+    ~/bin/1-packages.sh
+    ~/bin/2-neovim.sh
+    sudo ~/bin/3-sudo-go.sh
+fi
+
+if command -v nvim >/dev/null 2>&1; then
+  echo "Bootstraping neovim"
+  nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+fi
