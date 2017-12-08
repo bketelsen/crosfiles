@@ -1,0 +1,4 @@
+export GOPATH=~/go
+export PATH=$GOPATH/bin:/usr/local/go/bin:/usr/local/bin:$PATH
+export EDITOR=nvim
+
