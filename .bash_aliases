@@ -32,7 +32,6 @@ alias bketelsen="cd /home/bketelsen/go/src/github.com/bketelsen"
 alias gophercon="cd /home/bketelsen/go/src/github.com/gophercon"
 alias gopheracademy="cd /home/bketelsen/go/src/github.com/gopheracademy"
 alias tmux="tmux -2"
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias nvim='/usr/bin/nvim'
 alias vim='/usr/bin/nvim'

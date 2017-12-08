@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=10000
-HISTFILESIZE=20000
+HISTSIZE=100000
+HISTFILESIZE=200000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -90,12 +90,11 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 if [ -f ~/.bash_exports ]; then
     . ~/.bash_exports
+fi
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi
 if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
@@ -118,9 +117,9 @@ fi
 
 eval "$(direnv hook bash)"
 
-#function _update_ps1() {
-#    PS1="$(~/.powerline/powerline-go -error $?)"
-#}
+function _update_ps1() {
+    PS1="$(~/go/bin/powerline-go -error $?)"
+}
 
 #if [ "$TERM" != "linux" ]; then
 #    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
