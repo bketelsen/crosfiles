@@ -33,6 +33,3 @@ alias gophercon="cd /home/bketelsen/go/src/github.com/gophercon"
 alias gopheracademy="cd /home/bketelsen/go/src/github.com/gopheracademy"
 alias tmux="tmux -2"
 
-alias nvim='/usr/bin/nvim'
-alias vim='/usr/bin/nvim'
-alias vi='/usr/bin/nvim'

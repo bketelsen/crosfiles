@@ -18,6 +18,9 @@ if command -v nvim >/dev/null 2>&1; then
   nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
 fi
 
+// reload to get go settings
+source ~/.bashrc
+
 # Install a few essential Go apps
 go get -u github.com/direnv/direnv
 go get -u github.com/justjanne/powerline-go
