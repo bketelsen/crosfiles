@@ -118,7 +118,7 @@ fi
 eval "$(direnv hook bash)"
 
 function _update_ps1() {
-    PS1="$(~/go/bin/powerline-go -error $?)"
+    PS1="$(~/go/bin/powerline-go -modules 'user,ssh,cwd,perms,gitlite,exit,root' -error $?)"
 }
 
 if [ "$TERM" != "linux" ]; then
@@ -129,3 +129,4 @@ export LS_OPTIONS='--color-auto'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+cd ~

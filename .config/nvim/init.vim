@@ -32,7 +32,6 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "" Plug install packages
 "*****************************************************************************
 Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
@@ -48,7 +47,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
-Plug 'bagrat/vim-workspace'
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 else
@@ -61,13 +59,7 @@ if exists('make')
 endif
 Plug 'Shougo/vimproc.vim', {'do': g:make}
 
-"" Vim-Session
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
 
-if v:version >= 703
-  Plug 'Shougo/vimshell.vim'
-endif
 
 if v:version >= 704
   "" Snippets
@@ -79,9 +71,7 @@ Plug 'honza/vim-snippets'
 "" Color
 "Plug 'tomasr/molokai'
 
-Plug 'jodosha/vim-godebug'
 Plug 'Shougo/deoplete.nvim' ", { 'do': ':UpdateRemotePlugins' }
-Plug 'carlitux/deoplete-ternjs'
 Plug 'zchee/deoplete-go', {'build': {'unix': 'make'}}
 "*****************************************************************************
 "" Custom bundles
@@ -528,7 +518,7 @@ let g:go_highlight_space_tab_error = 0
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_trailing_whitespace_error = 0
 let g:go_highlight_extra_types = 0
-let g:go_bin_path = '~/go/bin'
+let g:go_bin_path = '/home/bketelsen/go/bin'
 
 let g:go_auto_sameids = 0
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
