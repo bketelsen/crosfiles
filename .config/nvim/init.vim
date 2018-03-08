@@ -33,6 +33,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "*****************************************************************************
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
+Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -140,6 +141,8 @@ if exists('$SHELL')
 else
     set shell=/bin/sh
 endif
+let g:python2_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " session management
 let g:session_directory = "~/.config/nvim/session"
@@ -518,7 +521,7 @@ let g:go_highlight_space_tab_error = 0
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_trailing_whitespace_error = 0
 let g:go_highlight_extra_types = 0
-let g:go_bin_path = '/home/bketelsen/go/bin'
+let g:go_bin_path = '/Users/bketelsen/go/bin'
 
 let g:go_auto_sameids = 0
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
