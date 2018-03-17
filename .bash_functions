@@ -1,3 +1,7 @@
+demo () {
+    doitlive play session.sh
+}
+
 extract () {
    if [ -f $1 ] ; then
        case $1 in
