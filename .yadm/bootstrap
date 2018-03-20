@@ -10,6 +10,11 @@ else
     ~/bin/2-neovim.sh
     sudo ~/bin/3-sudo-go.sh
 fi
+mkdir -p $HOME/setup
+cd $HOME/setup
+git clone https://github.com/iridakos/goto.git
+cd goto
+sudo ./install
 
 # Bootstrap Neovim
 

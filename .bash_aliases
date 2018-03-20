@@ -24,12 +24,5 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
-
-alias github="cd /home/bketelsen/go/src/github.com"
-alias talks="cd /home/bketelsen/go/src/github.com/bketelsen/talks"
-alias learngo="cd /home/bketelsen/go/src/github.com/thewondertwins/learngo"
-alias bketelsen="cd /home/bketelsen/go/src/github.com/bketelsen"
-alias gophercon="cd /home/bketelsen/go/src/github.com/gophercon"
-alias gopheracademy="cd /home/bketelsen/go/src/github.com/gopheracademy"
 alias tmux="tmux -2"
 
