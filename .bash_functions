@@ -1,3 +1,11 @@
+gmail() {
+  cmdg -config_dir=/home/bketelsen/.cmdg/gmail
+}
+
+ga() {
+  cmdg -config_dir=/home/bketelsen/.cmdg/ga
+}
+
 extract () {
    if [ -f $1 ] ; then
        case $1 in

@@ -18,13 +18,17 @@ if command -v nvim >/dev/null 2>&1; then
   nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
 fi
 
+
+sudo pip install doitlive
+sudo pip install jrnl
+
 // reload to get go settings
 source ~/.bashrc
 
 # Install a few essential Go apps
 go get -u github.com/direnv/direnv
 go get -u github.com/justjanne/powerline-go
-
+go get -u github.com/erroneousboat/slack-term
 
 # install nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
