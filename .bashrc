@@ -136,3 +136,4 @@ cd ~
 [[ -s "/usr/local/share/goto.sh" ]] && source /usr/local/share/goto.sh
 
 export PAGER=less
+export GPGKEY=A7BC8DC3

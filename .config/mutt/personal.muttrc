@@ -1,0 +1,4 @@
+macro index,pager i1 '<sync-mailbox><enter-command>source /home/bketelsen/.config/mutt/accounts/GMail.muttrc<enter><change-folder>!<enter>'
+macro index,pager i2 '<sync-mailbox><enter-command>source /home/bketelsen/.config/mutt/accounts/GA.muttrc<enter><change-folder>!<enter>'
+source /home/bketelsen/.config/mutt/accounts/GMail.muttrc
+source /home/bketelsen/.config/mutt/accounts/GA.muttrc
