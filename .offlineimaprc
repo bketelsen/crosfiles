@@ -4,7 +4,7 @@ accounts = GMail, GA
 starttls = yes
 ssl = yes
 pythonfile = ~/.config/mutt/credentials/imappwd.py
-
+maxsyncaccounts = 2
 [Account GMail]
 
 localrepository = GMail-local

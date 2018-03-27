@@ -2,7 +2,7 @@
 # muttrc file for account GA
 set realname = "Brian Ketelsen"
 set from = "bketelsen@gopheracademy.com"
-set smtp_url = "smtp://bketelsen@gopheracademy.com@smtp.gmail.com:487/"
+set smtp_url = "smtp://bketelsen@gopheracademy.com@smtp.gmail.com:587/"
 set sendmail = "/usr/bin/msmtp -a GA"
 set folder = "~/.mail/GA"
 set header_cache = ~/.config/mutt/accounts/GA/cache/headers
@@ -15,7 +15,7 @@ set ssl_starttls = yes
 set ssl_force_tls = yes
 
 bind index,pager gg noop
-bind index,pager g noop
+#bind index,pager g noop
 bind index gg first-entry
 unmailboxes *
 mailboxes =GA =------------------- "=archive" "=INBOX" "=sent" "=drafts"
