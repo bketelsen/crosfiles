@@ -139,3 +139,4 @@ cd ~
 
 export PAGER=less
 export GPGKEY=A7BC8DC3
+source "$HOME/.config/nvim/plugged/gruvbox/gruvbox_256palette.sh"

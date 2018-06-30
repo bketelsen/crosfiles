@@ -33,6 +33,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "*****************************************************************************
 "
 Plug 'roxma/nvim-completion-manager'
+Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'jremmen/vim-ripgrep'
@@ -62,8 +63,8 @@ if exists('make')
 endif
 Plug 'Shougo/vimproc.vim', {'do': g:make}
 
-
-
+Plug 'morhetz/gruvbox'
+set background=dark
 
 "" Color
 "Plug 'tomasr/molokai'
@@ -162,6 +163,8 @@ let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
   "colorscheme molokai
 endif
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+colorscheme gruvbox
 
 "set mousemodel=popup
 set mouse=a
@@ -215,7 +218,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'gruvbox'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -490,7 +493,7 @@ let g:go_highlight_space_tab_error = 0
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_trailing_whitespace_error = 0
 let g:go_highlight_extra_types = 0
-let g:go_bin_path = '/home/bketelsen/go/bin'
+let g:go_bin_path = '/Users/bketelsen/go/bin'
 
 let g:go_auto_sameids = 0
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
