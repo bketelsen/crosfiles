@@ -1,0 +1,30 @@
+# vim: filetype=neomuttrc
+# muttrc file for account GMail
+set realname = "Brian Ketelsen"
+set from = "bketelsen@gmail.com"
+set smtp_url = "smtp://bketelsen@gmail.com@smtp.gmail.com:587/"
+set sendmail = "/usr/bin/msmtp -a GMail"
+set folder = "~/.mail/GMail"
+set header_cache = ~/.config/mutt/accounts/GMail/cache/headers
+set message_cachedir = ~/.config/mutt/accounts/GMail/cache/bodies
+set certificate_file = ~/.config/mutt/accounts/GMail/certificates
+source "~/.config/mutt/credentials/getmuttpass GMail |"
+
+set mbox_type = Maildir
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+bind index,pager gg noop
+#bind index,pager g noop
+bind index gg first-entry
+unmailboxes *
+mailboxes =GMail =------------------- "=archive" "=INBOX" "=sent" "drafts" 
+macro index,pager gi "<change-folder>=INBOX<enter>" "Go to inbox."
+macro index,pager gs "<change-folder>=sent<enter>" "Go to sent."
+macro index,pager gd "<change-folder>=drafts<enter>" "Go to drafts."
+macro index,pager ga "<change-folder>=archive<enter>" "Go to archive."
+macro index,pager d "<save-message>=trash<enter><enter>" "Trash"
+macro index,pager y "<save-message>=archive<enter><enter>" "Archive"
+set spoolfile = "+INBOX"
+set mbox = "+GMail/archive"
+set postponed = "+GMail/drafts"

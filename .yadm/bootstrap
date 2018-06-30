@@ -23,12 +23,26 @@ if command -v nvim >/dev/null 2>&1; then
   nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
 fi
 
-// reload to get go settings
+
+sudo pip install doitlive
+sudo pip install jrnl
+
+#reload to get go settings
 source ~/.bashrc
 
 # Install a few essential Go apps
 go get -u github.com/direnv/direnv
 go get -u github.com/justjanne/powerline-go
+go get -u github.com/erroneousboat/slack-term
+
+# goto.sh
+mkdir -p ~/setup
+cd setup
+git clone https://github.com/iridakos/goto.git
+cd goto
+sudo ./install
+cd
+
 
 
 # install nvm

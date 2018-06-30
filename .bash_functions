@@ -1,6 +1,13 @@
 demo () {
     doitlive play session.sh
 }
+gmail() {
+  cmdg -config_dir=/home/bketelsen/.cmdg/gmail
+}
+
+ga() {
+  cmdg -config_dir=/home/bketelsen/.cmdg/ga
+}
 
 extract () {
    if [ -f $1 ] ; then
@@ -529,5 +536,28 @@ gh() {
 
   if [[ -d $local_path ]]; then
     cd $local_path
+  fi
+}
+function cd() {
+  if [ "$#" = "0" ]
+  then
+  pushd ${HOME} > /dev/null
+  elif [ -f "${1}" ]
+  then
+    ${EDITOR} ${1}
+  else
+  pushd "$1" > /dev/null
+  fi
+}
+
+function bd(){
+  if [ "$#" = "0" ]
+  then
+    popd > /dev/null
+  else
+    for i in $(seq ${1})
+    do
+      popd > /dev/null
+    done
   fi
 }

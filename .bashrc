@@ -7,7 +7,9 @@ case $- in
     *i*) ;;
       *) return;;
 esac
-
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -136,3 +138,6 @@ cd ~
 # Source goto
 [[ -s "/usr/local/share/goto.sh" ]] && source /usr/local/share/goto.sh
 
+export PAGER=less
+export GPGKEY=A7BC8DC3
+source "$HOME/.config/nvim/plugged/gruvbox/gruvbox_256palette.sh"

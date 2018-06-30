@@ -1,0 +1,30 @@
+# vim: filetype=neomuttrc
+# muttrc file for account GA
+set realname = "Brian Ketelsen"
+set from = "bketelsen@gopheracademy.com"
+set smtp_url = "smtp://bketelsen@gopheracademy.com@smtp.gmail.com:587/"
+set sendmail = "/usr/bin/msmtp -a GA"
+set folder = "~/.mail/GA"
+set header_cache = ~/.config/mutt/accounts/GA/cache/headers
+set message_cachedir = ~/.config/mutt/accounts/GA/cache/bodies
+set certificate_file = ~/.config/mutt/accounts/GA/certificates
+source "~/.config/mutt/credentials/getmuttpass GA |"
+
+set mbox_type = Maildir
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+bind index,pager gg noop
+#bind index,pager g noop
+bind index gg first-entry
+unmailboxes *
+mailboxes =GA =------------------- "=archive" "=INBOX" "=sent" "=drafts"
+macro index,pager gi "<change-folder>=INBOX<enter>" "Go to inbox."
+macro index,pager gs "<change-folder>=sent<enter>" "Go to sent."
+macro index,pager gd "<change-folder>=drafts<enter>" "Go to drafts."
+macro index,pager gt "<change-folder>=trash<enter>" "Go to trash."
+macro index,pager d "<save-message>=trash<enter><enter>" "Trash"
+macro index,pager y "<save-message>=archive<enter><enter>" "Archive"
+set spoolfile = "+INBOX"
+set mbox = "+GA/archive"
+set postponed = "+GA/drafts"

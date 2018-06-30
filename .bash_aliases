@@ -25,4 +25,5 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 alias tmux="tmux -2"
+alias g='goto'
 

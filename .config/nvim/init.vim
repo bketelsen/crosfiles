@@ -31,6 +31,9 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
+"
+Plug 'roxma/nvim-completion-manager'
+Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'jremmen/vim-ripgrep'
@@ -60,20 +63,14 @@ if exists('make')
 endif
 Plug 'Shougo/vimproc.vim', {'do': g:make}
 
-
-
-if v:version >= 704
-  "" Snippets
-  Plug 'SirVer/ultisnips'
-endif
-
-Plug 'honza/vim-snippets'
+Plug 'morhetz/gruvbox'
+set background=dark
 
 "" Color
 "Plug 'tomasr/molokai'
 
-Plug 'Shougo/deoplete.nvim' ", { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-go', {'build': {'unix': 'make'}}
+"Plug 'Shougo/deoplete.nvim' ", { 'do': ':UpdateRemotePlugins' }
+"Plug 'zchee/deoplete-go', {'build': {'unix': 'make'}}
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
@@ -141,14 +138,19 @@ if exists('$SHELL')
 else
     set shell=/bin/sh
 endif
-let g:python2_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python2_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " session management
 let g:session_directory = "~/.config/nvim/session"
 let g:session_autoload = "no"
 let g:session_autosave = "no"
 let g:session_command_aliases = 1
+
+" completion with tab
+set completeopt=longest,menuone
+inoremap <expr><tab>   pumvisible() ? "\<down>" : "\<tab>"
+inoremap <expr><s-tab> pumvisible() ? "\<up>" : "\<s-tab>" 
 
 "*****************************************************************************
 "" Visual Settings
@@ -161,6 +163,8 @@ let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
   "colorscheme molokai
 endif
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+colorscheme gruvbox
 
 "set mousemodel=popup
 set mouse=a
@@ -214,7 +218,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'gruvbox'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -266,33 +270,6 @@ else
   nnoremap <silent> <leader>sh :VimShellCreate<CR>
 endif
 
-"deoplete 
-
-" ==================== completion and snippet =========================
-" I use deoplete for Neovim and neocomplete for Vim.
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#ignore_sources = {}
-  let g:deoplete#ignore_sources._ = ['buffer', 'member', 'tag', 'file', 'neosnippet']
-  let g:deoplete#sources#go#sort_class = ['func', 'type', 'var', 'const']
-
-  " Use partial fuzzy matches like YouCompleteMe
-""  call deoplete#custom#set('_', 'matchers', ['matcher_full_fuzzy'])
-
-" I want to use my tab more smarter. If we are inside a completion menu jump
-" to the next item. Otherwise check if there is any snippet to expand, if yes
-" expand it. Also if inside a snippet and we need to jump tab jumps. If none
-" of the above matches we just call our usual 'tab'.
-function! s:tab_complete()
-  if pumvisible()
-    return "\<c-n>"
-  endif
-
-
-  return "\<tab>"
-endfunction
-imap <silent><expr><TAB> <SID>tab_complete()
-
-inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 
 "*****************************************************************************
@@ -396,11 +373,6 @@ cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>e :FZF -m<CR>
 
-" snippets
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-let g:UltiSnipsEditSplit="vertical"
 
 " syntastic
 let g:syntastic_always_populate_loc_list=1
@@ -526,12 +498,6 @@ let g:go_bin_path = '/Users/bketelsen/go/bin'
 let g:go_auto_sameids = 0
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
-augroup completion_preview_close
-  autocmd!
-  if v:version > 703 || v:version == 703 && has('patch598')
-    autocmd CompleteDone * if !&previewwindow && &completeopt =~ 'preview' | silent! pclose | endif
-  endif
-augroup END
 
 augroup go
 
