@@ -81,7 +81,6 @@ esac
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -135,8 +134,8 @@ cd ~
 
 
 # Source goto
-[[ -s "/usr/local/share/goto.sh" ]] && source /usr/local/share/goto.sh
-
+#[[ -s "/usr/local/share/goto.sh" ]] && source /usr/local/share/goto.sh
+source ~/.local/bin/bashmarks.sh
 export PAGER=less
 export GPGKEY=A7BC8DC3
 source "$HOME/.config/nvim/plugged/gruvbox/gruvbox_256palette.sh"
