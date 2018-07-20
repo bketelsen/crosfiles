@@ -128,7 +128,7 @@ fi
 export LS_OPTIONS='--color-auto'
 
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 export PATH=$PATH:/usr/local/go/bin
 cd ~
@@ -140,3 +140,4 @@ source ~/.local/bin/bashmarks.sh
 export PAGER=less
 export GPGKEY=A7BC8DC3
 source "$HOME/.config/nvim/plugged/gruvbox/gruvbox_256palette.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
