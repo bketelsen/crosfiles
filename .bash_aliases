@@ -13,9 +13,6 @@ for opener in xdg-open cmd.exe "start" open; do
 	fi
 done
 
-# Linux specific aliases
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
@@ -24,6 +21,6 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
+
 alias tmux="tmux -2"
-alias g='goto'
 

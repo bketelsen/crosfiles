@@ -1,0 +1,7 @@
+export DIR_gowasm="$HOME/go/src/github.com/gowasm"
+export DIR_github="$HOME/go/src/github.com"
+export DIR_bketelsen="$HOME/go/src/github.com/bketelsen"
+export DIR_athens="$HOME/go/src/github.com/gomods/athens"
+export DIR_factorapp="$HOME/go/src/github.com/factorapp"
+export DIR_factor="$HOME/go/src/github.com/factorapp/factor"
+export DIR_playground="$HOME/go/src/github.com/factorapp/playground"

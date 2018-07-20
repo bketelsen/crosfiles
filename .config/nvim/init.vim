@@ -32,7 +32,6 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "" Plug install packages
 "*****************************************************************************
 "
-Plug 'roxma/nvim-completion-manager'
 Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
@@ -57,6 +56,9 @@ else
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
   Plug 'junegunn/fzf.vim'
 endif
+
+    " :help Ncm2PopupOpen for more information
+let g:deoplete#enable_at_startup = 1
 let g:make = 'gmake'
 if exists('make')
         let g:make = 'make'
@@ -69,8 +71,8 @@ set background=dark
 "" Color
 "Plug 'tomasr/molokai'
 
-"Plug 'Shougo/deoplete.nvim' ", { 'do': ':UpdateRemotePlugins' }
-"Plug 'zchee/deoplete-go', {'build': {'unix': 'make'}}
+Plug 'Shougo/deoplete.nvim' ", { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-go', {'build': {'unix': 'make'}}
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
@@ -138,7 +140,6 @@ if exists('$SHELL')
 else
     set shell=/bin/sh
 endif
-let g:python2_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " session management
@@ -581,3 +582,20 @@ noremap <Leader><S-Tab> :WSClose!<CR>
 noremap <C-t> :WSTabNew<CR>
 
 cabbrev bonly WSBufOnly
+
+" neocomplete like
+set completeopt+=noinsert
+" deoplete.nvim recommend
+set completeopt+=noselect
+
+" Path to python interpreter for neovim
+" Skip the check of neovim module
+let g:python3_host_skip_check = 1
+
+" Run deoplete.nvim automatically
+let g:deoplete#enable_at_startup = 1
+
+let g:deoplete#sources#go#auto_goos = 1
+" deoplete-go settings
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']

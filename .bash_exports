@@ -1,5 +1,5 @@
 export GOPATH=~/go
-export PATH=$HOME/bin:$GOPATH/bin:$HOME/gowasm/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/gowasm/bin:$GOPATH/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export EDITOR=nvim
 export CDPATH=.:~:~/go/src:~/go/src/github.com:~/go/src/github.com/bketelsen
 
