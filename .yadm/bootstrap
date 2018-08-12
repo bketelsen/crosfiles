@@ -24,13 +24,15 @@ fi
 sudo pip install doitlive
 sudo pip install jrnl
 
-#reload to get go settings
-source ~/.bashrc
+
+export PATH=/usr/local/go/bin:$PATH
 
 # Install a few essential Go apps
 go get -u github.com/direnv/direnv
 go get -u github.com/justjanne/powerline-go
 go get -u github.com/erroneousboat/slack-term
+go get -u github.com/jesseduffield/lazygit
+go get -u github.com/buchanae/github-release-notes
 
 cd setup
 git clone git://github.com/huyng/bashmarks.git
