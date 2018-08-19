@@ -508,17 +508,6 @@ updateall() {
 }
 
 
-cdat() {
-    cda $2 --channel=twitter --alias=brketels --event=$1
-}
-
-cdal() {
-    cda $2 --channel=linkedin --alias=brketels --event=$1
-}
-
-cdaf() {
-    cda $2 --channel=facebook --alias=brketels --event=$1
-}
 
 gh() {
   if [[ $# -ne 2 ]]; then
