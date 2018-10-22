@@ -32,6 +32,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "" Plug install packages
 "*****************************************************************************
 "
+Plug 'vimwiki/vimwiki'
 Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
@@ -612,3 +613,12 @@ endf
 " Jump to tag
 nn <M-g> :call JumpToDef()<cr>
 ino <M-g> <esc>:call JumpToDef()<cr>i
+
+" vimwiki
+let g:vimwiki_list = [{
+  \ 'path': '$HOME/Documents/Notes',
+  \ 'template_path': '$HOME/Documents/Notes/templates',
+  \ 'template_default': 'default',
+  \ 'template_ext': '.html'}]
+
+noremap <Leader>wah :VimwikiAll2HTML<CR>

@@ -1,3 +1,6 @@
+wiki() {
+    cd ~/Documents/Notes && nvim index.wiki
+}
 demo () {
     doitlive play session.sh
 }
@@ -512,7 +515,11 @@ updateall() {
     find . -name ".git" -type d | sed 's/\/.git//' |  xargs -P10 -I{} git -C {} pull
 }
 
-
+CloneAll() {
+    USER=`basename $1`
+    cd $GOPATH/src/github.com && mkdir -p $USER && cd $USER
+    githubcloneall -u $USER
+}
 
 gh() {
   if [[ $# -ne 2 ]]; then
