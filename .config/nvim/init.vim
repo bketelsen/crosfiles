@@ -32,6 +32,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "" Plug install packages
 "*****************************************************************************
 "
+Plug 'vimwiki/vimwiki'
 Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
@@ -50,6 +51,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
+Plug 'zah/nim.vim'
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 else
@@ -140,7 +142,12 @@ if exists('$SHELL')
 else
     set shell=/bin/sh
 endif
-let g:python3_host_prog = '/usr/bin/python3'
+if has('mac')
+    let g:python3_host_prog = '/usr/bin/python3'
+else
+    let g:python3_host_prog = '/usr/bin/python3'
+endif
+
 
 " session management
 let g:session_directory = "~/.config/nvim/session"
@@ -494,7 +501,12 @@ let g:go_highlight_space_tab_error = 0
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_trailing_whitespace_error = 0
 let g:go_highlight_extra_types = 0
-let g:go_bin_path = '/Users/bketelsen/go/bin'
+
+if has('mac')
+    let g:go_bin_path = '/Users/bketelsen/go/bin'
+else
+    let g:go_bin_path = '/home/bketelsen/go/bin'
+endif
 
 let g:go_auto_sameids = 0
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
@@ -599,3 +611,24 @@ let g:deoplete#sources#go#auto_goos = 1
 " deoplete-go settings
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+
+fun! JumpToDef()
+  if exists("*GotoDefinition_" . &filetype)
+    call GotoDefinition_{&filetype}()
+  else
+    exe "norm! \<C-]>"
+  endif
+endf
+
+" Jump to tag
+nn <M-g> :call JumpToDef()<cr>
+ino <M-g> <esc>:call JumpToDef()<cr>i
+
+" vimwiki
+let g:vimwiki_list = [{
+  \ 'path': '$HOME/Documents/Notes',
+  \ 'template_path': '$HOME/Documents/Notes/templates',
+  \ 'template_default': 'default',
+  \ 'template_ext': '.html'}]
+
+noremap <Leader>wah :VimwikiAll2HTML<CR>

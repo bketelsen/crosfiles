@@ -1,5 +1,13 @@
+wiki() {
+    cd ~/Documents/Notes && nvim index.wiki
+}
 demo () {
     doitlive play session.sh
+}
+talks () {
+    g bketelsen
+    cd talks
+    docker run -it -v `pwd`:/repo -p 9000:9000 gitpitch/desktop:pro
 }
 gmail() {
   cmdg -config_dir=/home/bketelsen/.cmdg/gmail
@@ -507,17 +515,10 @@ updateall() {
     find . -name ".git" -type d | sed 's/\/.git//' |  xargs -P10 -I{} git -C {} pull
 }
 
-
-cdat() {
-    cda $2 --channel=twitter --alias=brketels --event=$1
-}
-
-cdal() {
-    cda $2 --channel=linkedin --alias=brketels --event=$1
-}
-
-cdaf() {
-    cda $2 --channel=facebook --alias=brketels --event=$1
+CloneAll() {
+    USER=`basename $1`
+    cd $GOPATH/src/github.com && mkdir -p $USER && cd $USER
+    githubcloneall -u $USER
 }
 
 gh() {
