@@ -142,3 +142,5 @@ export GPGKEY=A7BC8DC3
 source "$HOME/.config/nvim/plugged/gruvbox/gruvbox_256palette.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
