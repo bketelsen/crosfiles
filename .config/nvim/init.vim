@@ -142,7 +142,12 @@ if exists('$SHELL')
 else
     set shell=/bin/sh
 endif
-let g:python3_host_prog = '/usr/local/bin/python3'
+if has('mac')
+    let g:python3_host_prog = '/usr/bin/python3'
+else
+    let g:python3_host_prog = '/usr/bin/python3'
+endif
+
 
 " session management
 let g:session_directory = "~/.config/nvim/session"
@@ -496,7 +501,12 @@ let g:go_highlight_space_tab_error = 0
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_trailing_whitespace_error = 0
 let g:go_highlight_extra_types = 0
-let g:go_bin_path = '/Users/bketelsen/go/bin'
+
+if has('mac')
+    let g:go_bin_path = '/Users/bketelsen/go/bin'
+else
+    let g:go_bin_path = '/home/bketelsen/go/bin'
+endif
 
 let g:go_auto_sameids = 0
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
