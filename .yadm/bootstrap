@@ -19,7 +19,9 @@ fi
 # Install Packages
 system_type=$(uname -s)
 if [ "$system_type" = "Darwin" ]; then
-    bin/macsetup.sh
+    sudo ~/bin/3-sudo-go.sh
+    ~/bin/macsetup.sh
+
 else
     ~/bin/1-packages.sh
     ~/bin/2-neovim.sh

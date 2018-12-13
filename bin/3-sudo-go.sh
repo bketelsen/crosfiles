@@ -1,1 +1,1 @@
-/home/bketelsen/bin/3-sudo-go.sh##Linux
+/Users/bketelsen/bin/3-sudo-go.sh##Darwin
