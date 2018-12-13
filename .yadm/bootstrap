@@ -42,13 +42,11 @@ sudo pip install jrnl
 
 
 export PATH=/usr/local/go/bin:$PATH
-
+PATH=/usr/local/go/bin:$PATH
 # Install a few essential Go apps
 go get -u github.com/direnv/direnv
 go get -u github.com/justjanne/powerline-go
-go get -u github.com/erroneousboat/slack-term
 go get -u github.com/jesseduffield/lazygit
-go get -u github.com/buchanae/github-release-notes
 
 cd setup
 git clone git://github.com/huyng/bashmarks.git

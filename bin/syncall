@@ -1,2 +1,0 @@
-#!/bin/bash 
-unison ~/go/src ssh://10.0.1.100/go/src
