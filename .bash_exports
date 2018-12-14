@@ -1,6 +1,5 @@
 export GOPATH=~/go
-export PATH=$HOME/bin:$GOPATH/bin:$HOME/.local/bin:$HOME/.cargo/bin:/usr/local/bin:$PATH
+export PATH=~/.nimble/bin:$HOME/bin:$GOPATH/bin:$HOME/.local/bin:$HOME/.cargo/bin:/usr/local/bin:$PATH
 export EDITOR=nvim
-export CDPATH=.:~:~/go/src:~/go/src/github.com:~/go/src/github.com/bketelsen
-export PATH=~/.nimble/bin:$PATH
 export GO111MODULE=off
+

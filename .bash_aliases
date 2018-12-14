@@ -21,7 +21,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
-alias ci="code-insiders ."
+alias ci="code ."
 alias tmux="tmux -2"
 alias lg="lazygit"
-
+alias mame="ssh mame@mamecab"
