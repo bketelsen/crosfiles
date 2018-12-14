@@ -1,3 +1,18 @@
+sp() {
+    unset PROMPT_COMMAND
+    PS1='\u> '
+
+}
+
+splash() {
+  if [ ! -z $1 ] ; then	
+	wget https://source.unsplash.com/$1/1600x900 -O $1.jpg
+	wget https://source.unsplash.com/$1/400x300 -O $1-thumb.jpg
+  else
+		echo "!! Need photo ID"
+  fi
+}
+
 wiki() {
     cd ~/Documents/Notes && nvim index.wiki
 }
