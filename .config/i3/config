@@ -15,7 +15,7 @@ set $mod Mod1
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
-font pango:Source Code Pro for Powerline 11
+font pango:Source Code Pro for Powerline 12
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -179,9 +179,9 @@ bindsym $mod+m bar mode toggle
 
 
 bar {
-    status_command    goi3bar -config-path ~/.config/goi3bar/config.json
+    #i3bar_command i3bar -t
+    status_command    i3blocks
     position          top
-    mode dock
     workspace_buttons yes
     colors {
         background #002b36
@@ -203,10 +203,16 @@ workspace_auto_back_and_forth yes
 #exec --no-startup-id gnome-session-manager
 #exec --no-startup-id /usr/bin/nm-applet
 #exec --no-startup-id xrandr --output DP-1 --left-of eDP-1
-exec --no-startup-id xrandr --dpi 192
+#exec --no-startup-id xrandr --dpi 192
+exec --no-startup-id xfsettingsd --sm-client-disable &
+exec --no-startup-id xfce4-volumed &
 
-### THEME ###
-
+exec --no-startup-id sh -c "xfce4-power-manager || mate-power-manager "&
+exec --no-startup-id nm-applet &
+exec --no-startup-id blueman-applet &
+exec --no-startup-id sh -c "/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 || /usr/lib/x86_64-linux-gnu/polkit-mate/polkit-mate-authentication-agent-1" &
+exec --no-startup-id pnmixer &
+exec --no-startup-id compton --opacity-rule '100:window_type = "dock" && class_g = "i3blocks"' --config ~/.config/compton.conf -b
 
 #class			    border	     backgr.	text
 client.focused               #121212 #101010 #9e8a8e
@@ -220,9 +226,6 @@ new_window pixel 1
 new_float pixel 1
 
 
-### floating windows ###
-for_window [class="Gimp"] floating enable
-for_window [class="Corebird"] floating enable
 
 
 
