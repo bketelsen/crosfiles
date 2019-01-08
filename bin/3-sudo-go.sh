@@ -1,1 +1,0 @@
-/Users/bketelsen/bin/3-sudo-go.sh##Darwin

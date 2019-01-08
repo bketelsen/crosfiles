@@ -118,20 +118,12 @@ fi
 
 eval "$(direnv hook bash)"
 
-function _update_ps1() {
-    PS1="$(~/go/bin/powerline-go -modules 'user,ssh,cwd,perms,gitlite,exit,root' -error $?)"
-}
-
-if [ "$TERM" != "linux" ]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
 export LS_OPTIONS='--color-auto'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 export PATH=$PATH:/usr/local/go/bin
-cd ~
 
 
 # Source goto
