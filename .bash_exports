@@ -1,4 +1,4 @@
-export GOPATH=~/go
+export GOPATH=~
 export PATH=~/.nimble/bin:$HOME/bin:$GOPATH/bin:$HOME/.local/bin:$HOME/.cargo/bin:/usr/local/bin:$PATH
 export EDITOR=nvim
 export GO111MODULE=off
