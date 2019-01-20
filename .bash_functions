@@ -1,3 +1,13 @@
+#!/bin/bash
+
+function _update_ps1() {
+    PS1="$(/home/bketelsen/bin/powerline-go -error $?)"
+}
+
+if [ "$TERM" != "linux" ] && [ -f "/home/bketelsen/bin/powerline-go" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
+
 sp() {
     unset PROMPT_COMMAND
     PS1='\u> '

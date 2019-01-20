@@ -1,5 +1,10 @@
+#!/bin/bash
+
 export GOPATH=~
 export PATH=~/.nimble/bin:$HOME/bin:$GOPATH/bin:$HOME/.local/bin:$HOME/.cargo/bin:/usr/local/bin:$PATH
 export EDITOR=nvim
 export GO111MODULE=off
-
+export LS_OPTIONS='--color-auto'
+export PAGER=less
+export GPGKEY=A7BC8DC3
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

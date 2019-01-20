@@ -78,13 +78,6 @@ esac
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -118,21 +111,12 @@ fi
 
 eval "$(direnv hook bash)"
 
-export LS_OPTIONS='--color-auto'
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-export PATH=$PATH:/usr/local/go/bin
 
 
 # Source goto
 #[[ -s "/usr/local/share/goto.sh" ]] && source /usr/local/share/goto.sh
 source ~/.local/bin/bashmarks.sh
-export PAGER=less
-export GPGKEY=A7BC8DC3
 source "$HOME/.config/nvim/plugged/gruvbox/gruvbox_256palette.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
