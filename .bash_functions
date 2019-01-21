@@ -27,6 +27,8 @@ sp() {
     repo_url="git@github.com:$username/$repo.git"
 
     echo "Repo:     $repo_url"
+
+	mkdir -p $GOPATH/src/github.com/$username
 	cd $GOPATH/src/github.com/$username
     git clone "$repo_url"
     cd "$repo"
