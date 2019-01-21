@@ -13,7 +13,24 @@ sp() {
     PS1='\u> '
 
 }
+  # function to clone a repo 
+  # modified from https://gist.github.com/martytrzpit/3421776
+  function clone {
+    repo=$1
+    upstream=$2
+    username=$3
 
+    if [[ -z "$username" ]]; then
+      username="bketelsen"
+    fi
+
+    repo_url="git@github.com:$username/$repo.git"
+
+    echo "Repo:     $repo_url"
+	cd $GOPATH/src/github.com/$username
+    git clone "$repo_url"
+    cd "$repo"
+}
 splash() {
   if [ ! -z $1 ] ; then	
 	wget https://source.unsplash.com/$1/1600x900 -O $1.jpg
