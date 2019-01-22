@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function _update_ps1() {
-    PS1="$(/home/bketelsen/bin/powerline-go -error $?)"
+    PS1="$(/home/bketelsen/bin/powerline-go -path-aliases \~/src/github.com=@GH, -error $?)"
 }
 
 if [ "$TERM" != "linux" ] && [ -f "/home/bketelsen/bin/powerline-go" ]; then
