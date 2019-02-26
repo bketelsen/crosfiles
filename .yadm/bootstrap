@@ -4,6 +4,15 @@
 mkdir -p $HOME/setup
 cd $HOME/setup
 
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
+echo 'deb http://ftp.debian.org/debian stretch-backports main' | sudo tee /etc/apt/sources.list.d/stretch-backports.list
+sudo apt update
+sudo apt -y install tilix
+sudo ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh
+
 go get -u github.com/direnv/direnv
 
 cd $HOME/setup

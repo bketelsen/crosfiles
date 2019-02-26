@@ -29,3 +29,5 @@ fi
 export PATH="$HOME/.cargo/bin:$PATH"
 export GOPATH=~/
 export PATH=~/bin:'/home/bketelsen/.cargo/bin:/home/bketelsen/bin:/home/bketelsen/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games':/usr/local/go/bin:/home/bketelsen//bin
+export GOPATH=~/
+export PATH=~/bin:'/home/bketelsen/bin:/home/bketelsen/.cargo/bin:/home/bketelsen/bin:/home/bketelsen/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/local/go/bin:/home/bketelsen//bin':/usr/local/go/bin:/home/bketelsen//bin
