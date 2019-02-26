@@ -1,18 +1,5 @@
 #!/bin/bash
 
-function _update_ps1() {
-    PS1="$(/home/bketelsen/bin/powerline-go -path-aliases \~/src/github.com=@GH, -error $?)"
-}
-
-if [ "$TERM" != "linux" ] && [ -f "/home/bketelsen/bin/powerline-go" ]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
-
-sp() {
-    unset PROMPT_COMMAND
-    PS1='\u> '
-
-}
   # function to clone a repo 
   # modified from https://gist.github.com/martytrzpit/3421776
   function clone {
@@ -42,9 +29,6 @@ splash() {
   fi
 }
 
-wiki() {
-    cd ~/Documents/Notes && nvim index.wiki
-}
 demo () {
     doitlive play session.sh
 }
@@ -246,9 +230,9 @@ getcertnames() {
 # given location
 v() {
 	if [ $# -eq 0 ]; then
-		nvim .
+		vim .
 	else
-		nvim "$@"
+		vim "$@"
 	fi
 }
 

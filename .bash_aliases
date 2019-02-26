@@ -30,11 +30,10 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 alias ci="code-insiders ."
 alias tmux="tmux -2"
-alias lg="lazygit"
+
 alias mame="ssh mame@mamecab"
 
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-export PATH=$PATH:/usr/local/go/bin

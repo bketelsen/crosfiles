@@ -1,52 +1,10 @@
 #!/bin/bash
-system_type=$(uname -s)
 
-if [ "$system_type" = "Darwin" ]; then
-
-  # install homebrew if it's missing
-  if ! command -v brew >/dev/null 2>&1; then
-    echo "Installing homebrew"
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  fi
-
-  if [ -f "$HOME/.Brewfile" ]; then
-    echo "Updating homebrew bundle"
-    brew bundle --global
-  fi
-
-fi
-
-# Install Packages
-system_type=$(uname -s)
-if [ "$system_type" = "Darwin" ]; then
-    sudo ~/bin/3-sudo-go.sh
-
-else
-    ~/bin/1-packages.sh
-    ~/bin/2-neovim.sh
-    sudo ~/bin/3-sudo-go.sh
-fi
+~/bin/code.sh
 mkdir -p $HOME/setup
 cd $HOME/setup
 
-# Bootstrap Neovim
-
-if command -v nvim >/dev/null 2>&1; then
-  echo "Bootstraping Vim"
-  nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
-fi
-
-
-
-
-
-export PATH=/usr/local/go/bin:$PATH
-export GOPATH=~
-PATH=/usr/local/go/bin:$PATH
-# Install a few essential Go apps
 go get -u github.com/direnv/direnv
-go get -u github.com/justjanne/powerline-go
-go get -u github.com/jesseduffield/lazygit
 
 cd $HOME/setup
 git clone git://github.com/huyng/bashmarks.git

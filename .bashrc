@@ -116,7 +116,7 @@ eval "$(direnv hook bash)"
 # Source goto
 #[[ -s "/usr/local/share/goto.sh" ]] && source /usr/local/share/goto.sh
 source ~/.local/bin/bashmarks.sh
-source "$HOME/.config/nvim/plugged/gruvbox/gruvbox_256palette.sh"
+
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
